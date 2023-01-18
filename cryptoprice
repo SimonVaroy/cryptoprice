@@ -1,0 +1,5 @@
+#!/bin/sh
+
+crypto=$1 
+
+curl --silent --location --request GET 'api.coincap.io/v2/assets/'$crypto | jshon -e data -e priceUsd -u | rev | cut -c15- | rev
